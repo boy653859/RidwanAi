@@ -473,3 +473,17 @@ footer {
         padding: 13px
     }
 }
+
+.error {
+    background: #2a1218;
+    border: 1px solid #5c2630;
+    border-radius: 9px;
+    padding: 10px 12px
+}
+
+.success {
+    background: #0e251c;
+    border: 1px solid #1e5a43;
+    border-radius: 9px;
+    padding: 10px 12px
+}

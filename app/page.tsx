@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
-const VOICES = { Mizanur: "89da9de1-fa23-4598-a1d2-481817edd69a", Ridwan: "6c7c6759-5478-418e-bae1-518fa639a594", "Voice 3": "YOUR-VOICE-ID" } as const;
+const VOICES = { Narrator: "89da9de1-fa23-4598-a1d2-481817edd69a", "Voice 2": "YOUR-VOICE-ID", "Voice 3": "YOUR-VOICE-ID" } as const;
 const models = [["sonic-3.6", "Sonic 3.6"], ["sonic-3.5", "Sonic 3.5"], ["sonic-3", "Sonic 3"]];
-const rates = [8, 16, 24, 44.1, 48];
+const rates = [8000, 16000, 24000, 44100, 48000];
+const rateLabels: Record<number, string> = { 8000: "8 kHz", 16000: "16 kHz", 24000: "24 kHz", 44100: "44.1 kHz", 48000: "48 kHz" };
 
 export default function Home() {
-    const [apiKey, setApiKey] = useState(""), [show, setShow] = useState(false), [model, setModel] = useState("sonic-3.6"), [voice, setVoice] = useState<keyof typeof VOICES>("Ridwan"), [text, setText] = useState(""), [rate, setRate] = useState(44100), [speed, setSpeed] = useState(1), [volume, setVolume] = useState(1), [loading, setLoading] = useState(false), [msg, setMsg] = useState(""), [err, setErr] = useState(false), [url, setUrl] = useState(""), [file, setFile] = useState("");
+    const [apiKey, setApiKey] = useState(""), [show, setShow] = useState(false), [model, setModel] = useState("sonic-3.6"), [voice, setVoice] = useState<keyof typeof VOICES>("Narrator"), [text, setText] = useState(""), [rate, setRate] = useState(44100), [speed, setSpeed] = useState(1), [volume, setVolume] = useState(1), [loading, setLoading] = useState(false), [msg, setMsg] = useState(""), [err, setErr] = useState(false), [url, setUrl] = useState(""), [file, setFile] = useState("");
     async function generate() {
         setMsg(""); setUrl(""); setFile(""); setErr(false);
         if (!apiKey.trim()) return setErr(true), setMsg("Please enter your API key.");
@@ -32,7 +33,7 @@ export default function Home() {
             <hr /><h3>Output</h3>
             <div className="grid">
                 <Field label="FORMAT"><select disabled value="wav" onChange={() => { }}><option>WAV</option></select></Field>
-                <Field label="SAMPLE RATE"><select value={rate} onChange={e => setRate(Number(e.target.value))}>{rates.map(x => <option key={x} value={x}>{x.toLocaleString()} kHz</option>)}</select></Field>
+                <Field label="SAMPLE RATE"><select value={rate} onChange={e => setRate(Number(e.target.value))}>{rates.map(x => <option key={x} value={x}>{rateLabels[x]}</option>)}</select></Field>
             </div>
             <div className="grid">
                 <Range label="SPEED" value={speed} min={.1} max={2} onChange={setSpeed} /><Range label="VOLUME" value={volume} min={.5} max={2} onChange={setVolume} />
