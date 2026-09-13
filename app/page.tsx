@@ -1,11 +1,11 @@
- "use client";
+"use client";
 
 import { useMemo, useState } from "react";
 
 const VOICES = {
-  Narrator: "89da9de1-fa23-4598-a1d2-481817edd69a",
-  "Voice 2": "YOUR-VOICE-ID",
-  "Voice 3": "YOUR-VOICE-ID",
+  Ridwan: "6c7c6759-5478-418e-bae1-518fa639a594",
+  Mizanur_Rahman_Azhari: "89da9de1-fa23-4598-a1d2-481817edd69a",
+  Sadik: "YOUR-VOICE-ID",
 } as const;
 
 const models = [
@@ -19,7 +19,7 @@ const sampleRates = [8000, 16000, 24000, 44100, 48000];
 export default function Home() {
   const [apiKey, setApiKey] = useState("");
   const [model, setModel] = useState("sonic-3.6");
-  const [voice, setVoice] = useState<keyof typeof VOICES>("Narrator");
+  const [voice, setVoice] = useState<keyof typeof VOICES>("Ridwan");
   const [transcript, setTranscript] = useState("");
   const [sampleRate, setSampleRate] = useState(44100);
   const [speed, setSpeed] = useState(1);
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="logo">✦</div>
           <div>
             <h1>RidwanAI</h1>
-            <p>Cartesia Sonic Voice Generator</p>
+            <p>Text to Voice Generator</p>
           </div>
         </div>
         <div className="ready"><span /> Ready</div>
@@ -168,7 +168,7 @@ export default function Home() {
         <div className="grid">
           <div className="field">
             <label>CONTAINER</label>
-            <select disabled value="wav" onChange={() => {}}>
+            <select disabled value="wav" onChange={() => { }}>
               <option value="wav">WAV</option>
             </select>
           </div>

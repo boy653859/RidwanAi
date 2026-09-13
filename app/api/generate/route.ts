@@ -119,9 +119,9 @@ export async function POST(request: Request) {
       },
     });
   } catch (error) {
-    console.error("Cartesia TTS error:", error);
+    console.error("TTS error:", error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Cartesia request failed." },
+      { error: error instanceof Error ? error.message : "Request failed." },
       { status: 500 }
     );
   }
