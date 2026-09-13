@@ -92,7 +92,7 @@ export async function POST(request: Request) {
       output_format: {
         container: "wav",
         encoding: "pcm_s16le",
-        sample_rate: sampleRate,
+        sample_rate: sampleRate as 8000 | 16000 | 24000 | 44100 | 48000,
       },
       generation_config: {
         speed,
