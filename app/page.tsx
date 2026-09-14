@@ -1,6 +1,6 @@
  "use client";
 import {useState} from "react";
-const VOICES={"Female":"59ba7dee-8f9a-432f-a6c0-ffb33666b654","Male":"2ba861ea-7cdc-43d1-8608-4045b5a41de5","Mizanur Rahman Azhari":"89da9de1-fa23-4598-a1d2-481817edd69a"} as const;
+const VOICES={"Female":"59ba7dee-8f9a-432f-a6c0-ffb33666b654","Male":"2ba861ea-7cdc-43d1-8608-4045b5a41de5","Azhari":"89da9de1-fa23-4598-a1d2-481817edd69a"} as const;
 const models=[["sonic-3.6","Sonic 3.6"],["sonic-3.5","Sonic 3.5"],["sonic-3","Sonic 3"]];
 const rates=[8000,16000,24000,44100,48000];
 const rateLabels: Record<number,string>={8000:"8 kHz",16000:"16 kHz",24000:"24 kHz",44100:"44.1 kHz",48000:"48 kHz"};
