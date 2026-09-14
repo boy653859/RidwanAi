@@ -3,9 +3,10 @@
 import { useState } from "react";
 
 const VOICES = {
-  Female: "59ba7dee-8f9a-432f-a6c0-ffb33666b654",
+  Ridwan: "89da9de1-fa23-4598-a1d2-481817edd69a",
+  Sadik: "1d87a960-7d27-46fe-8498-7828360fea82",
   Male: "2ba861ea-7cdc-43d1-8608-4045b5a41de5",
-  Azhari: "89da9de1-fa23-4598-a1d2-481817edd69a",
+  Female: "59ba7dee-8f9a-432f-a6c0-ffb33666b654",
 } as const;
 
 const models = [
@@ -29,7 +30,7 @@ export default function Home() {
   const [show, setShow] = useState(false);
   const [model, setModel] = useState("sonic-3.6");
   const [voice, setVoice] =
-    useState<keyof typeof VOICES>("Female");
+    useState<keyof typeof VOICES>("Ridwan");
   const [text, setText] = useState("");
   const [rate, setRate] = useState(44100);
   const [speed, setSpeed] = useState(1);
