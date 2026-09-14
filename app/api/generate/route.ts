@@ -1,7 +1,7 @@
 import Cartesia from "@cartesia/cartesia-js";
 import {NextResponse} from "next/server";
 export const runtime="nodejs"; export const dynamic="force-dynamic";
-const VOICES:Record<string,string>={Narrator:"89da9de1-fa23-4598-a1d2-481817edd69a","Voice 2":"YOUR-VOICE-ID","Voice 3":"YOUR-VOICE-ID"};
+const VOICES:Record<string,string>={Ridwan: "89da9de1-fa23-4598-a1d2-481817edd69a",Sadik: "1d87a960-7d27-46fe-8498-7828360fea82",Male: "2ba861ea-7cdc-43d1-8608-4045b5a41de5",Female: "59ba7dee-8f9a-432f-a6c0-ffb33666b654"};
 const MODELS=new Set(["sonic-3.6","sonic-3.5","sonic-3"]);const RATES=new Set([8000,16000,24000,44100,48000]);
 type Body={apiKey?:string;modelId?:string;transcript?:string;voiceName?:string;voiceId?:string;sampleRate?:number;speed?:number;volume?:number};
 const clean=(s:string)=>s.replace(/[^a-zA-Z0-9_-]+/g,"_").replace(/^_+|_+$/g,"")||"Voice";
