@@ -30,7 +30,7 @@ export default function Home() {
   const [show, setShow] = useState(false);
   const [model, setModel] = useState("sonic-3.6");
   const [voice, setVoice] =
-    useState<keyof typeof VOICES>("Female");
+    useState<keyof typeof VOICES>("Ridwan");
   const [text, setText] = useState("");
   const [rate, setRate] = useState(44100);
   const [speed, setSpeed] = useState(1);
