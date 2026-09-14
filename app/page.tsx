@@ -1,12 +1,12 @@
  "use client";
 import {useState} from "react";
-const VOICES={Narrator:"89da9de1-fa23-4598-a1d2-481817edd69a","Voice 2":"YOUR-VOICE-ID","Voice 3":"YOUR-VOICE-ID"} as const;
+const VOICES={Female:"59ba7dee-8f9a-432f-a6c0-ffb33666b654","Male":"2ba861ea-7cdc-43d1-8608-4045b5a41de5","Mizanur Rahman Azhari":"89da9de1-fa23-4598-a1d2-481817edd69a"} as const;
 const models=[["sonic-3.6","Sonic 3.6"],["sonic-3.5","Sonic 3.5"],["sonic-3","Sonic 3"]];
 const rates=[8000,16000,24000,44100,48000];
 const rateLabels: Record<number,string>={8000:"8 kHz",16000:"16 kHz",24000:"24 kHz",44100:"44.1 kHz",48000:"48 kHz"};
 
 export default function Home(){
- const [apiKey,setApiKey]=useState(""),[show,setShow]=useState(false),[model,setModel]=useState("sonic-3.6"),[voice,setVoice]=useState<keyof typeof VOICES>("Narrator"),[text,setText]=useState(""),[rate,setRate]=useState(44100),[speed,setSpeed]=useState(1),[volume,setVolume]=useState(1),[loading,setLoading]=useState(false),[msg,setMsg]=useState(""),[err,setErr]=useState(false),[url,setUrl]=useState(""),[file,setFile]=useState("");
+ const [apiKey,setApiKey]=useState(""),[show,setShow]=useState(false),[model,setModel]=useState("sonic-3.6"),[voice,setVoice]=useState<keyof typeof VOICES>("Female"),[text,setText]=useState(""),[rate,setRate]=useState(44100),[speed,setSpeed]=useState(1),[volume,setVolume]=useState(1),[loading,setLoading]=useState(false),[msg,setMsg]=useState(""),[err,setErr]=useState(false),[url,setUrl]=useState(""),[file,setFile]=useState("");
  async function generate(){
   setMsg("");setUrl("");setFile("");setErr(false);
   if(!apiKey.trim())return setErr(true),setMsg("Please enter your API key.");
